@@ -1,0 +1,8 @@
+/qemu test/
+qemu-system-x86_64 -drive format=raw,file=boot.img
+
+/nasm/
+nasm -f bin -o boot1.img boot1.asm
+
+/ndisasm/
+ndisasm -b16 boot1.img > dis1.txt
