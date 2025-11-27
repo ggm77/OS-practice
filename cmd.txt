@@ -2,7 +2,14 @@
 qemu-system-x86_64 -drive format=raw,file=boot.img
 
 /nasm/
+이미지로
 nasm -f bin -o boot1.img boot1.asm
+
+순수 바이너리로
+nasm -f bin boot1.asm -o boot1.bin
+
+바이너리 두개를 이미지로
+cat boot.bin kernel.bin > os.img
 
 /ndisasm/
 ndisasm -b16 boot1.img > dis1.txt
